@@ -1,0 +1,4 @@
+.meal-type {
+    display: flex;
+    flex-direction: row;
+}
