@@ -1,19 +1,54 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import '../styles/MealHome.css';
-import MealMenu from "./MealMenu";
-import Breakfast_Meal from "./Breakfast_Meal";
-import Lunch_Meal from "./Lunch_Meal";
-import Dinner_Meal from "./Dinner_Meal";
+import BreakfastMeal from "./Breakfast/BreakfastMeal";
+import LunchMeal from "./Lunch/LunchMeal";
+import DinnerMeal from "./Dinner/DinnerMeal";
 
 
 function MealHome() {
 
+    const [[showOnlyBreakfast, showOnlyLunch, showOnlyDinner], setMeal] = useState([false, false, false]);
+
+    const handleBreakfast = () => {
+        console.log('...Breakfast...');
+        if(showOnlyBreakfast) {
+            setMeal([false, false, false]);
+        }
+        else {
+            setMeal([true, false, false]);
+        }
+    }
+    const handleLunch = () => {
+        console.log('...Lunch...');
+        if(showOnlyLunch) {
+            setMeal([false, false, false]);
+        }
+        else {
+            setMeal([false, true, false]);
+        }
+    }
+    const handleDinner = () => {
+        console.log('...Dinner...');
+        if(showOnlyDinner) {
+            setMeal([false, false, false]);
+        }
+        else {
+            setMeal([false, false, true]);
+        }
+    }
+
+    /*useEffect( () => {
+        console.log('showOnlyBreakfast ', showOnlyBreakfast);
+        console.log('showOnlyLunch ', showOnlyLunch);
+        console.log('showOnlyDinner ', showOnlyDinner);
+    }, [showOnlyBreakfast, showOnlyLunch, showOnlyDinner]);*/
+
     return (
             <div className='meal-types'>
                 <h5>Choose Meal for</h5>
-                <Breakfast_Meal />
-                <Lunch_Meal />
-                <Dinner_Meal />
+                <BreakfastMeal showBreakfast={showOnlyBreakfast} handleBreakfast={handleBreakfast} />
+                <LunchMeal showLunch={showOnlyLunch} handleLunch={handleLunch} />
+                <DinnerMeal showDinner={showOnlyDinner} handleDinner={handleDinner} />
             </div>
     )
 }

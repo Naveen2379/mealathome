@@ -66,11 +66,11 @@ function MealMenu({mealSelectedFor}) {
         return (
             <div key={item.name}>
                 <h5>{item.name}</h5>
-                <div>
+                {/*<div>
                     <button onClick={decreaseQuantiity}><b>-</b></button>
                     <span>Quantity {quantity}</span>
                     <button onClick={increaseQuantiity}><b>+</b></button>
-                </div>
+                </div>*/}
 
             </div>
         )
