@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import '../styles/MealHome.css';
-import BreakfastMeal from "./Breakfast/BreakfastMeal";
-import LunchMeal from "./Lunch/LunchMeal";
-import DinnerMeal from "./Dinner/DinnerMeal";
+import BreakfastCheckBox from "./Breakfast";
+import LunchCheckBox from "./Lunch";
+import DinnerCheckBox from "./Dinner";
 
 
 function MealHome() {
@@ -46,9 +46,9 @@ function MealHome() {
     return (
             <div className='meal-types'>
                 <h5>Choose Meal for</h5>
-                <BreakfastMeal showBreakfast={showOnlyBreakfast} handleBreakfast={handleBreakfast} />
-                <LunchMeal showLunch={showOnlyLunch} handleLunch={handleLunch} />
-                <DinnerMeal showDinner={showOnlyDinner} handleDinner={handleDinner} />
+                <BreakfastCheckBox showBreakfast={showOnlyBreakfast} handleBreakfast={handleBreakfast} />
+                <LunchCheckBox showLunch={showOnlyLunch} handleLunch={handleLunch} />
+                <DinnerCheckBox showDinner={showOnlyDinner} handleDinner={handleDinner} />
             </div>
     )
 }

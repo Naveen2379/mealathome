@@ -1,10 +1,10 @@
 import React from "react";
 import '../../styles/MealType.css';
 import {Breakfast} from "../../constants";
-import BreakfastMenu from "./BreakfastMenu";
+import BreakfastMenu from "../BreakfastMenu";
 
 
-function BreakfastMeal({showBreakfast, handleBreakfast}) {
+function BreakfastCheckBox({showBreakfast, handleBreakfast}) {
 
     const handleBreakfastMenu = () => {
         handleBreakfast();
@@ -25,4 +25,4 @@ function BreakfastMeal({showBreakfast, handleBreakfast}) {
     )
 }
 
-export default BreakfastMeal;
+export default BreakfastCheckBox;

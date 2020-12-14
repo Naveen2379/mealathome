@@ -1,12 +1,11 @@
 import React from "react";
 import '../../styles/MealType.css';
 import {Dinner} from "../../constants";
-import DinnerMenu from "./DinnerMenu";
+import Index from "../DinnerMenu";
 
 
-function DinnerMeal({showDinner, handleDinner}) {
+function DinnerCheckBox({showDinner, handleDinner}) {
     const handleDinnerMenu = (event) => {
-        console.log('handleDinnerMenu');
         const dinner = event.target.value;
         handleDinner(dinner);
     }
@@ -21,11 +20,11 @@ function DinnerMeal({showDinner, handleDinner}) {
             </label>
             <div>
                 {
-                    showDinner ? <DinnerMenu /> : ''
+                    showDinner ? <Index /> : ''
                 }
             </div>
         </div>
     )
 }
 
-export default DinnerMeal;
+export default DinnerCheckBox;

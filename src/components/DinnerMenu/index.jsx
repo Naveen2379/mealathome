@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from "react";
-import Quantity from "../Quantity/Quantity";
-import {increase} from "../../constants";
-import DinnerItem from "../DinnerItem/DinnerItem";
+import ItemQuantity from "../ItemQuantity";
+import ItemNameQuantityManipulation from "../ItemNameQuantityManipulation";
 
 function DinnerMenu() {
 
     const [dinnerMenu, setDinnerMenu] = useState([]);
-
+    const [itemQuantityArr, setItemQuantityArr] = useState([{itemName:'', quantity:0}]);
     useEffect(() => {
         /*fetch('endpointURL')
             .then(response => response.json())
@@ -15,7 +14,6 @@ function DinnerMenu() {
                 setBreakfastMenu(result);
             })*/
         const dinnerMenu = [
-            {"name": "Dinner"},
             {"name": "Lemon Chicken", "price": 150},
             {"name": "Chettinad Fish Fry", "price": 250},
             {"name": "Dum Aalu Lakhnawi", "price": 100},
@@ -26,16 +24,20 @@ function DinnerMenu() {
 
     }, []);
 
+    const handleItemQuantity = (selectedItemName, selectedQuantity) => {
+        const itemQuantityArr_New = ItemNameQuantityManipulation(itemQuantityArr, selectedItemName, selectedQuantity)
+        setItemQuantityArr(itemQuantityArr_New);
+    }
 
     const submitChosenMenu = () => {
+        console.log(itemQuantityArr.filter((item) => item.itemName!==''));
     }
 
     const show_menu = <div>
         {
             dinnerMenu.map( (item) => {
-                console.log('item name ', item.name);
                 return (
-                    <DinnerItem key={item.name} itemName={item.name} />
+                    <ItemQuantity key={item.name} itemName={item.name} handleItemQuantity={handleItemQuantity} />
                 )
 
             })

@@ -1,9 +1,9 @@
 import React from "react";
 import '../../styles/MealType.css';
 import {Lunch} from "../../constants";
-import LunchMenu from "./LunchMenu";
+import LunchMenu from "../LunchMenu";
 
-function LunchMeal({showLunch, handleLunch}) {
+function LunchCheckBox({showLunch, handleLunch}) {
 
     const handleLunchMenu = () => {
         console.log('handleLunchMenu');
@@ -27,4 +27,4 @@ function LunchMeal({showLunch, handleLunch}) {
     )
 }
 
-export default LunchMeal;
+export default LunchCheckBox;
