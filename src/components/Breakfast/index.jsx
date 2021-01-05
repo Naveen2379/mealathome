@@ -11,14 +11,17 @@ function BreakfastCheckBox({showBreakfast, handleBreakfast}) {
     }
 
     return (
-        <div className='meal-type'>
-            <label>{Breakfast}
+        <div className='button-meal-type'>
+            {/*<label>{Breakfast}
                 <input type="checkbox"
                        onChange={handleBreakfastMenu}
                        value={Breakfast}
                        checked={showBreakfast} />
-            </label>
-            <div>
+            </label>*/}
+            <button onClick={handleBreakfastMenu}>
+                {Breakfast}
+            </button>
+            <div className='meal-type'>
                 {showBreakfast ? <BreakfastMenu /> : ''}
             </div>
         </div>

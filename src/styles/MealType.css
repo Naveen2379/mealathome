@@ -1,8 +1,21 @@
+.header-meal-types {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .meal-type {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 70%;
 }
 
 .meal-type label:hover  {
     cursor: pointer;
+}
+
+.button-meal-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

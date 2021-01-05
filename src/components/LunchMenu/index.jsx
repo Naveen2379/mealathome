@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import ItemQuantity from "../ItemQuantity";
 import {Lunch} from "../../constants";
 import ItemNameQuantityManipulation from "../ItemNameQuantityManipulation";
+import Timings from "../Timings";
 
 function LunchMenu() {
 
@@ -16,7 +17,7 @@ function LunchMenu() {
             })*/
         const lunchMenu = [
             {"name": "Biryani, curd rice", "price": 120},
-            {"name": "Ridge gourd gravy, carrot beans poriyal", "price": 150},
+            {"name": "Ridge gourd gravy", "price": 150},
             {"name": "Dal fry, cauliflower sabji", "price": 200},
             {"name": "Sambar, rasam", "price": 110},
             {"name": "Gobi paratha, Jeera rice", "price": 100},
@@ -47,7 +48,7 @@ function LunchMenu() {
         */
     }
 
-    const show_menu = <div>
+    const show_menu = <div className='menu'>
         {lunchMenu.map( (item) => {
             return (
                 <ItemQuantity key={item.name} itemName={item.name} handleItemQuantity={handleItemQuantity} />
@@ -56,9 +57,9 @@ function LunchMenu() {
     </div>;
 
     return (
-        <div>
-            <h2>Showing Menu for Lunch</h2>
-            <div>{show_menu}</div>
+        <div className='timing-menu'>
+            <Timings mealType={Lunch} />
+            {show_menu}
             <button onClick={submitChosenMenu}>I'm Done</button>
         </div>
     )

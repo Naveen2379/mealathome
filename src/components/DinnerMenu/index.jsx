@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import ItemQuantity from "../ItemQuantity";
 import ItemNameQuantityManipulation from "../ItemNameQuantityManipulation";
+import Timings from "../Timings";
+import {Dinner} from "../../constants";
 
 function DinnerMenu() {
 
@@ -33,7 +35,7 @@ function DinnerMenu() {
         console.log(itemQuantityArr.filter((item) => item.itemName!==''));
     }
 
-    const show_menu = <div>
+    const show_menu = <div className='menu'>
         {
             dinnerMenu.map( (item) => {
                 return (
@@ -45,9 +47,9 @@ function DinnerMenu() {
     </div>;
 
     return (
-        <div>
-            <h2>Showing Menu for Dinner</h2>
-            <div>{show_menu}</div>
+        <div className='timing-menu'>
+            <Timings mealType={Dinner} />
+            {show_menu}
             <button onClick={submitChosenMenu}>I'm Done</button>
         </div>
     )

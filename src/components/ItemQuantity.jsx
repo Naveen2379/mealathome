@@ -19,7 +19,7 @@ function ItemQuantity({itemName, handleItemQuantity}) {
     }
 
     return (
-        <div>
+        <div className='menu-item'>
             <h5>{itemName}</h5>
             <Quantity handleQuantity={handleItemNameQuantity} quantity={quantity} />
         </div>

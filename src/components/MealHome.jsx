@@ -44,11 +44,13 @@ function MealHome() {
     }, [showOnlyBreakfast, showOnlyLunch, showOnlyDinner]);*/
 
     return (
-            <div className='meal-types'>
+            <div className='header-meal-types'>
                 <h5>Choose Meal for</h5>
-                <BreakfastCheckBox showBreakfast={showOnlyBreakfast} handleBreakfast={handleBreakfast} />
-                <LunchCheckBox showLunch={showOnlyLunch} handleLunch={handleLunch} />
-                <DinnerCheckBox showDinner={showOnlyDinner} handleDinner={handleDinner} />
+                <div className='meal-types'>
+                    <BreakfastCheckBox showBreakfast={showOnlyBreakfast} handleBreakfast={handleBreakfast} />
+                    <LunchCheckBox showLunch={showOnlyLunch} handleLunch={handleLunch} />
+                    <DinnerCheckBox showDinner={showOnlyDinner} handleDinner={handleDinner} />
+                </div>
             </div>
     )
 }

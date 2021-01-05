@@ -1,7 +1,7 @@
 import React from "react";
 import '../../styles/MealType.css';
-import {Dinner} from "../../constants";
-import Index from "../DinnerMenu";
+import {Breakfast, Dinner} from "../../constants";
+import DinnerMenu from "../DinnerMenu";
 
 
 function DinnerCheckBox({showDinner, handleDinner}) {
@@ -11,16 +11,19 @@ function DinnerCheckBox({showDinner, handleDinner}) {
     }
 
     return (
-        <div className='meal-type'>
-            <label>{Dinner}
+        <div className='button-meal-type'>
+            {/*<label>{Dinner}
                 <input type="checkbox"
                        onChange={handleDinnerMenu}
                        value={Dinner}
                        checked={showDinner} />
-            </label>
-            <div>
+            </label>*/}
+            <button onClick={handleDinnerMenu}>
+                {Dinner}
+            </button>
+            <div className='meal-type'>
                 {
-                    showDinner ? <Index /> : ''
+                    showDinner ? <DinnerMenu /> : ''
                 }
             </div>
         </div>

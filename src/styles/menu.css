@@ -1,0 +1,25 @@
+.timing-menu {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-menu {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    justify-content: space-evenly;
+}
+
+.menu-item {
+    border: 1px solid lightslategray;
+}

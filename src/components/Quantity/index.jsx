@@ -11,7 +11,7 @@ function Quantity({handleQuantity, quantity}) {
     return (
         <div>
             <button onClick={setQuantity} value={decrease}>-</button>
-            <span>Quantity {quantity}</span>
+            <span>Qty {quantity}</span>
             <button onClick={setQuantity} value={increase}>+</button>
         </div>
     )
